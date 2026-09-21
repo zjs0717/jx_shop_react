@@ -1,0 +1,116 @@
+.tabbar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  height: calc(var(--tab-h) + var(--safe-b));
+  padding: 0 8px var(--safe-b);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -8px 28px rgba(18, 24, 26, 0.06);
+}
+
+.tabbar.is-dark {
+  background: rgba(10, 8, 12, 0.88);
+  border-top-color: rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.tabbar__item {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 8px 4px;
+  cursor: pointer;
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.tabbar.is-dark .tabbar__item {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.tabbar__item.is-active {
+  color: var(--brand);
+}
+
+.tabbar.is-dark .tabbar__item.is-active {
+  color: #fff;
+}
+
+.tabbar__item:active {
+  transform: scale(0.96);
+}
+
+.tabbar__icon-wrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.tabbar__live-dot {
+  position: absolute;
+  top: -1px;
+  right: -3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 0 2px #fff;
+  animation: pulse 1.6s ease infinite;
+}
+
+.tabbar.is-dark .tabbar__live-dot {
+  box-shadow: 0 0 0 2px #0a080c;
+}
+
+.tabbar__label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.tabbar__item.is-active .tabbar__label {
+  font-weight: 700;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 0.7;
+  }
+}
+
+/* Pad：略加宽触控区 */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tabbar {
+    padding: 0 24px var(--safe-b);
+  }
+
+  .tabbar__label {
+    font-size: 12px;
+  }
+}
+
+/* PC：由壳层卸载；兜底隐藏 */
+@media (min-width: 1024px) {
+  .tabbar {
+    display: none;
+  }
+}

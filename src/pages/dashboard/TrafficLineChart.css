@@ -1,0 +1,97 @@
+.line-chart {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.line-chart__legend {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.line-chart__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #94a3b8;
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 4px 8px;
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.15s, color 0.15s, opacity 0.15s;
+}
+
+.line-chart__legend-item:hover,
+.line-chart__legend-item.is-on {
+  color: #e0f2fe;
+  border-color: rgba(56, 189, 248, 0.35);
+  background: rgba(14, 116, 144, 0.15);
+}
+
+.line-chart__legend-item.is-dim {
+  opacity: 0.4;
+}
+
+.line-chart__legend-item i {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  display: inline-block;
+}
+
+.line-chart__svg {
+  width: 100%;
+  height: auto;
+  flex: 1;
+  min-height: 180px;
+  cursor: crosshair;
+}
+
+.line-chart__grid {
+  stroke: rgba(148, 163, 184, 0.16);
+  stroke-width: 1;
+}
+
+.line-chart__cross {
+  stroke: rgba(125, 211, 252, 0.55);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+
+.line-chart__axis {
+  fill: #64748b;
+  font-size: 11px;
+}
+
+.line-chart__tip {
+  padding: 6px 8px;
+  background: rgba(2, 12, 27, 0.92);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #e0f2fe;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.line-chart__tip strong {
+  display: block;
+  margin-bottom: 4px;
+  color: #7dd3fc;
+}
+
+.line-chart__tip p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.line-chart__tip i {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  display: inline-block;
+}

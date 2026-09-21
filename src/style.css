@@ -1,0 +1,130 @@
+:root {
+  --ink: #0d1026;
+  --ink-soft: #1a1f3d;
+  --text: #5a5e78;
+  --text-h: #0d1026;
+  --muted: #8b90a8;
+  --bg: #f5f4f9;
+  --bg-elevated: #ffffff;
+  --code-bg: #eeeef5;
+  --border: rgba(13, 16, 38, 0.08);
+  --brand: #ff2d7a;
+  --brand-deep: #e01860;
+  --brand-soft: rgba(255, 45, 122, 0.12);
+  --brand-glow: rgba(255, 45, 122, 0.32);
+  --brand-orange: #ff7a00;
+  --brand-purple: #7b3eff;
+  --brand-cyan: #00b8ff;
+  --accent-warm: #ff7a00;
+  --accent-cool: #00b8ff;
+  --live: #ff2d7a;
+  --success: #12b886;
+  --surface-dark: #0d1026;
+  --surface-dark-elevated: #151833;
+  --brand-gradient: linear-gradient(135deg, #ff7a00 0%, #ff2d7a 52%, #7b3eff 100%);
+  --shadow:
+    0 12px 32px rgba(13, 16, 38, 0.08),
+    0 2px 8px rgba(13, 16, 38, 0.04);
+  --shadow-brand: 0 10px 28px rgba(255, 45, 122, 0.28);
+
+  --sans: 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --display: 'Syne', 'Noto Sans SC', sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  --tab-h: 64px;
+  --top-h: 56px;
+  --side-w: 0px;
+  --content-max: 1120px;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --bp-pad: 768px;
+  --bp-pc: 1024px;
+
+  font: 15px/1.5 var(--sans);
+  letter-spacing: 0.01em;
+  color-scheme: light;
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--bg);
+  overscroll-behavior: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--sans);
+  font-weight: 650;
+  color: var(--text-h);
+  margin: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(13, 16, 38, 0.18);
+  border-radius: 999px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --content-max: 920px;
+    --top-h: 58px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --tab-h: 0px;
+    --side-w: 220px;
+    --top-h: 64px;
+    --content-max: 1280px;
+    --safe-b: 0px;
+  }
+}

@@ -1,0 +1,64 @@
+.slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  background: var(--surface-dark);
+}
+
+.slides__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.06);
+  filter: saturate(1.12) brightness(0.9) contrast(1.02);
+  transition:
+    opacity 1.1s ease,
+    transform 6.5s ease;
+  pointer-events: none;
+}
+
+.slides__img.is-active {
+  opacity: 1;
+  transform: scale(1.12);
+  z-index: 1;
+}
+
+.slides__dots {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+.slides__dot {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    width 0.25s ease;
+}
+
+.slides__dot.is-active {
+  width: 18px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+@media (max-width: 900px) {
+  .slides__dots {
+    top: 14px;
+    right: 14px;
+  }
+}

@@ -1,0 +1,202 @@
+.page {
+  animation: fade 0.3s ease both;
+}
+
+.back {
+  border: 0;
+  background: transparent;
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-family: var(--display);
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.head p,
+.hint {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.add,
+.empty button,
+.form__actions button[type='submit'] {
+  height: 36px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--brand-gradient);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.err {
+  color: var(--brand);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.empty {
+  padding: 40px 16px;
+  text-align: center;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px dashed var(--border);
+  color: var(--muted);
+}
+
+.empty button {
+  margin-top: 12px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 14px;
+}
+
+.card__top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.card__top strong {
+  color: var(--ink);
+}
+
+.card__top span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card__top em {
+  margin-left: auto;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--brand);
+  background: var(--brand-soft);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.card p {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.card__actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+.card__actions button,
+.form__actions .ghost {
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.card__actions .danger {
+  color: var(--brand);
+  border-color: rgba(255, 45, 122, 0.25);
+}
+
+.form {
+  margin-top: 16px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form h2 {
+  font-size: 16px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.form input[type='text'],
+.form input:not([type]) {
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0 12px;
+  font: inherit;
+  color: var(--ink);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.check {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+  color: var(--ink) !important;
+}
+
+.check input {
+  accent-color: var(--brand);
+}
+
+.form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
